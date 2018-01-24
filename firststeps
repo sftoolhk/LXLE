@@ -1,0 +1,132 @@
+//format 
+HDD/ raiz 6666gb
+swap 8888gb
+restante ext4
+//remoção spywares
+sudo apt-get remove zeitgeist zeitgeist-core zeitgeist-datahub python-zeitgeist rhythmbox-plugin-zeitgeist 
+geoclue geoclue-ubuntu-geoip geoip-database whoopsie
+
+//If you have several machines on a LAN then I'd suggest the following:restrict default ignore
+# Permit hosts on network 192.168.0.0 with netmask 255.255.255.0 change these if your network is different.
+restrict 192.168.0.0 mask 255.255.255.0 nomodify
+$ sudo su
+//ou$ su
+//digite tua senha
+//ou
+# sudo apt-get# sudo apt-get check ; sudo apt-get update &&sudo apt-get upgrade && sudo apt-get full upgrade &&
+sudo apt-get install -f &&sudo apt-get -f install &&sudo apt-get check ; sudo apt-get -f install ; sudo apt-get install -f ; 
+sudo apt-get update &&sudo apt-get upgrade ; sudo apt-get dist-upgrade ; sudo apt-get full-upgrade
+# reboot
+//ou# sudo reboot
+//instalando programas
+# sudo dpkg --configure -a
+# sudo apt -f install
+# sudo apt install -f
+# sudo apt check
+//ou
+sudo dpkg --configure -a ; sudo apt -f install ; sudo apt install -f ; sudo apt check
+//atualize tudo
+# sudo apt update ; sudo at upgrade ; sudo apt-dist upgrade
+# reboot
+//editores de texto
+//atualizar tudo# apt list -upgradable
+//para finalizar
+# sudo apt check ; sudo apt update && sudo apt upgrade && sudo apt full-upgrade && sudo apt install -f && 
+sudo apt autoclean && sudo apt clean && sudo apt update && sudo apt upgrade && sudo apt full-upgrade && 
+sudo apt install -f && sudo apt -f install && sudo dpkg --configure -a && sudo apt update && sudo apt dist
+//programas
+# sudo apt install (nome do programa)
+//para remover
+# sudo apt remove (nome do programa) 
+//para remover completamente (be careful)
+# sudo apt purge (nome do programa)
+//para procurar programas
+# sudo apt search (nome do programa)
+# sudo apt search (Expressão)
+//Navegadores# sudo apt install midori
+# sudo apt install firefox
+# sudo apt install chromium
+# sudo apt install epiphany
+//Tor Browser
+# sudo apt-get update ; sudo apt-get install tor-browser ; sudo apt-get update ; sudo apt-get dist-upgrade
+//Reprodutodores Midia/DVD
+# sudo apt install apt-clone
+# sudo apt install deluge
+# sudo apt install aptoncd
+# sudo apt install clementine
+# sudo apt install musique
+# sudo apt install handbrake
+# sudo apt install winff
+# sudo apt install selene
+# sudo apt install unetbootin
+# sudo apt install systemback
+# sudo apt install vlc browser-plugin-vlc mplayer smplayer
+//Sensores# sudo apt install sensors
+# sudo apt install lm-sensors (para notebook)
+# sudo apt install thermald
+# sudo apt install psensor
+//Conky-Manager
+# apt update
+# sudo apt install deluge uget smplayer gnuchess xboard kollision -y
+# sudo apt -y update ; sudo apt-install conky conky-all ; sudo apt-add-repository -y ppa:teejee2008/ppa ; 
+sudo apt-get update ; sudo apt-get install conky manager ; sudo apt-get install curl lm-sensors hddtemp ; 
+sudo apt update ; sudo apt upgrade ; sudo apt dist-upgrade
+//para iniciar o Conky pelo Terminal
+#conky -d
+//para fechar
+#pkill conky
+//Screenlets
+# sudo apt install screenlets
+//Icones e Temas
+//Numix# su ; apt-get install git ; mkdir numix ; cd numix ;git clone https://github.com/cldx/numix-gtk-theme ; 
+git clone https://github.com/numixproject/numix-icon-theme ; 
+git clone https://github.com/numixproject/numix-icon-theme-circle
+//Metodo longo
+# mkdir numix-themes
+# cd numix-themes
+# git clone https://github.com/numixproject/numix-icon-theme-circle
+# sudo cp -fr numix-icon-thme-circle/Numix-Circle-Light /usr/share/icons
+# sudo chmod 755 -R /usr/share/icons/Numix-Circle-Light
+# sudo cp -fr numix-icon-theme-circle/Numix-Circle /usr/share/icons
+# sudo chmod 755 -R /usr/share/icons/Numix-Circle-Light
+# git clone https://github.com/numixproject/numix-icon-theme
+# sudo cp -fr numix-icon-theme-circle/Numix-Circle /usr/share/icons
+# cd /usr/share/themes
+# sudo git clone https://github.com/shimmerproject/Numix
+# sudo chmod 755 -R /usr/share/themes/Numix
+# cd /opt
+# git clone https://github.com/numixproject/numix-folders
+# cd /opt/numix-folders
+# sudo chmod +x numix-folders# sudo leafpad numix-folders.desktop
+[Desktop Entry]Version=1.0Type=ApplicationTerminal=falseName=Numix 
+FoldersExec=/opt/numix-folders/numix-foldersStartup
+WMClass=numix-folders
+Comment=Alternate folders for user with our base icon theme.Icon=/opt/numix-folders/gui/numix-folders.svg
+Categories=GNOME;GTK;//Salve, feche, depois:# sudo cp -fr numix-folders.desktop/usr/share/applications//Tema gtk numix-gtk:
+# mv numix-gtk-theme /usr/share/themes
+//Instalação do tema Numix# mv numix-icon-theme/Numix//usr/share/icons
+//Tema de icones Numix Circle
+#mv numix-icon-theme-circle/Numix-Circle/ /usr/share/icons; cd--# rm numix -rf
+//Metodo rápido#suctrl+c && ctrl+v#apt-get install git && mkdir numix ; cd numix && 
+git clone https://github.com/cldx/numix-gtk-theme && git clone https://github.com/numixproject/numix-icon-theme &&
+git clone https://github.com/numixproject/numix-icon-theme-circle && mv numix-gtk-theme /usr/share/themes &&
+mv numix-icon-theme/Numix/ /usr/share/icons && mv numix-icon-theme-circle/Numix-Circle/ /usr/share/icons ; cd -- && 
+rm numix -rf
+//Repositórios! 
+sources.list//deb http://ftp.debian.org/debian jessie-backports main # apt install gedit 
+# sudo gedit /etc/apt/sources.list
+//Repositório padrão .deb 
+http://http.debian.net/debian/ jessie main contrib non-free #deb-src http://http.debian.net/debian/ jessie main contrib non-free
+//Atualizações de segurançadeb http://http.debian.net/debian/jessie-updates main contrib non-free
+# deb-src http://security.debian.org/jessie/updates main contrib non-free
+//Volatiledeb http://http.debian.net/debian/jessie-updates main contrib non-free
+# deb-src http://http.debian.net/debian/jessie-updates main contrib non-free
+//Backportsdeb http://http.debian.net/debian/jessie-backports main contrib non-free
+# deb-src http://http.debian.net/debian/jessie-backports main contrib non-free
+//salve e feche o gedit
+//execute um de cada vez
+# apt-get update
+# apt-get install debian-archive-keyring
+# apt-get update
+# apt-get dist-upgrade
+# apt-get -t jessie-backports dist-upgradeou

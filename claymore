@@ -1,0 +1,71 @@
+No Ubuntu você precisa baixar o driver oficial da página da AMD. Depois que baixar, use o comando TAR para descompactar o conteúdo.
+
+
+tar -Jxvf amdgpu-pro-17.10-xxxxx.tar.xz
+cd amdgpu-pro-17.10-xxxxx
+./amdgpu-pro-install -y
+1
+2
+3
+tar -Jxvf amdgpu-pro-17.10-xxxxx.tar.xz
+cd amdgpu-pro-17.10-xxxxx
+./amdgpu-pro-install -y
+Quando terminar a instalação dê os seguintes comandos para adicionar seu usuário ao grupo de video.
+
+
+sudo usermod -a -G video $LOGNAME
+sudo reboot
+1
+2
+sudo usermod -a -G video $LOGNAME
+sudo reboot
+Instalar o Claymore Miner no Ubuntu
+
+O Claymore é atualmente o software mais robusto e completo para minerar no linux.
+
+Baixar o Claymore no Ubuntu
+
+
+cd ~/Downloads
+wget https://github.com/nanopool/Claymore-Dual-Miner/releases/download/v9.5/Claymore.s.Dual.Ethereum.Decred_Siacoin_Lbry_Pascal.AMD.NVIDIA.GPU.Miner.v9.5.-.LINUX.tar.gz
+1
+2
+cd ~/Downloads
+wget https://github.com/nanopool/Claymore-Dual-Miner/releases/download/v9.5/Claymore.s.Dual.Ethereum.Decred_Siacoin_Lbry_Pascal.AMD.NVIDIA.GPU.Miner.v9.5.-.LINUX.tar.gz
+Vamos criar uma pasta dedicada ao Claymore e copia-lo para lá.
+
+
+sudo mkdir /usr/local/claymore95
+sudo tar -xvf Claymore.s.Dual.Ethereum.Decred_Siacoin_Lbry_Pascal.AMD.NVIDIA.GPU.Miner.v9.5.-.LINUX.tar.gz -C /usr/local/claymore95
+1
+2
+sudo mkdir /usr/local/claymore95
+sudo tar -xvf Claymore.s.Dual.Ethereum.Decred_Siacoin_Lbry_Pascal.AMD.NVIDIA.GPU.Miner.v9.5.-.LINUX.tar.gz -C /usr/local/claymore95
+Agora vamos colocar o arquivo executavel nas permissões corretas:
+
+
+<strong>cd /usr/local/claymore95
+sudo chmod u+s ethdcrminer64
+</strong>
+1
+2
+3
+<strong>cd /usr/local/claymore95
+sudo chmod u+s ethdcrminer64
+</strong>
+Agora vamos editar o arquivo de configuração para entrar sua carteira e o nome do minerador (worker).
+
+Vamos usar o editor de textos nano para fazer a configuração no arquivo mine.sh:
+
+sudo nano mine.sh
+
+
+#!/bin/sh
+export GPU_MAX_ALLOC_PERCENT=100
+./ethdcrminer64 -epool us1.ethermine.org:4444 -ewal CARTEIRA.WORKER01 -epsw x -mode 1 -tt 68 -allpools 1
+1
+2
+3
+#!/bin/sh
+export GPU_MAX_ALLOC_PERCENT=100
+./ethdcrminer64 -epool us1.ethermine.org:4444 -ewal CARTEIRA.WORKER01 -e

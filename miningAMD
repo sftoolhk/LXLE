@@ -1,0 +1,74 @@
+//Primeiro instale os pacotes necessarios
+apt-get update
+apt-get install build-essential software-properties-common byobu htop lshw zip libcurl4-openssl-dev git
+apt-get install openssl
+apt-get install libssl-dev
+apt-get install automake
+apt-get install autotools-dev
+apt-get install ucode-amd
+apt-get install xf86-video-amdgpu
+apt-get install xf86-video-ati
+apt-get install radeontop
+
+//Se for Nvidia
+apt-get install nvidia-cuda-dev nvidia-cuda-toolkit
+sh NVIDIA-Linux-x86_64-375.66.run
+
+//Configure as contas
+https://www.blockchain.com/
+https://www.myetherwallet.com/
+
+//Escolha o minerador
+
+//Claymore
+wget https://github.com/nanopool/Claymore-Dual-Miner/releases/download/v7.3/Claymore.s.Dual.Ethereum.Decred_Siacoin_Lbry.AMD.NVIDIA.GPU.Miner.v7.3.-.LINUX.tar.gz
+tar xzvf Claymore.s.Dual.Ethereum.Decred_Siacoin_Lbry.AMD.NVIDIA.GPU.Miner.v7.3.-.LINUX.tar.gz
+chmod u+s ethdcrminer64
+
+//ccminer & cgminer
+git clone https://github.com/tpruvot/ccminer.git
+./build.sh
+
+//Usage
+//Start ccminer mining decred issuing the following command
+ccminer -t 1 -a decred -o stratum+tcp://dcr.suprnova.cc:3252 -u USERNAME.WORKER_NAME -p PASSWORD
+
+//Minergate
+apt-get update && wget https://minergate.com/download/deb-cli -O minergate-cli.deb && dpkg -i minergate-cli.deb
+minergate-cli -user EMAIL_ADDRESS -xmr 6
+EMAIL_ADDRESS being your account name at minergate
+
+//Defina o pool de mineração
+
+//Configure o script
+Create file called mine-eth-nanopool.sh for mining Ethereum using nanopool. You don't need to create this file but it makes it easier to start later:
+
+#!/bin/sh
+export GPU_FORCE_64BIT_PTR=0
+export GPU_MAX_HEAP_SIZE=100
+export GPU_USE_SYNC_OBJECTS=1
+export GPU_MAX_ALLOC_PERCENT=100
+export GPU_SINGLE_ALLOC_PERCENT=100
+
+# nanopool
+./ethdcrminer64 -epool eth-eu1.nanopool.org:9999 
+-ewal WALLET_ADDRESS.WORKER_NAME/EMAIL_ADDRESS -epsw PASSWORD -mode 1 -ftime 10 -ethi 8
+
+//WALLET_ADDRESS is your Ethereum wallet
+//WORKER_NAME can be anything, for ex. "my-miner-001"
+//EMAIL_ADDRESS is optional
+//PASSWORD to set it for access
+
+Chmod the file you just created:
+
+chmod +x mine-eth-nanopool.sh
+Usage
+Mining Ethereum using nanopool
+Start the miner using the following command:
+
+./mine-eth-nanopool.sh
+Dual-Mining Ethereum using nanopool and Decred using suprnova
+./ethdcrminer64 -epool eth-eu1.nanopool.org:9999 -ewal WALLET_ADDRESS.WORKER_NAME/EMAIL_ADDRESS -epsw PASSWORD -dpool dcr.suprnova.cc:3252 -dwal USERNAME.WORKER_NAME -dpsw PASSWORD -allpools 1
+USERNAME is needed because suprnova works this way. You need to get an account there first
+
+//

@@ -2,9 +2,19 @@
 HDD/ raiz 6666gb
 swap 8888gb
 restante ext4
+
+//Favoritos
+# sudo apt-get install wine ; chromium-bsu ; remmina ; midori
+  
 //remoção spywares
-sudo apt-get remove zeitgeist zeitgeist-core zeitgeist-datahub python-zeitgeist rhythmbox-plugin-zeitgeist 
+# sudo apt-get remove zeitgeist zeitgeist-core zeitgeist-datahub python-zeitgeist rhythmbox-plugin-zeitgeist 
 geoclue geoclue-ubuntu-geoip geoip-database whoopsie
+
+//Atualização do sistema
+# sudo apt-get check ; sudo apt-get update && sudo apt-get upgrade && sudo apt-get full upgrade &&
+sudo apt-get install -f && sudo apt-get -f install && sudo apt-get check ; sudo apt-get -f install ; sudo apt-get install -f ; 
+sudo apt-get update && sudo apt-get upgrade ; sudo apt-get dist-upgrade ; sudo apt-get full-upgrade
+# sudo apt-get upgrade ; update ; dist-upgrade ; clean ; autoclean ; check ; download
 
 //If you have several machines on a LAN then I'd suggest the following:restrict default ignore
 # Permit hosts on network 192.168.0.0 with netmask 255.255.255.0 change these if your network is different.
@@ -13,9 +23,7 @@ $ sudo su
 //ou$ su
 //digite tua senha
 //ou
-# sudo apt-get# sudo apt-get check ; sudo apt-get update &&sudo apt-get upgrade && sudo apt-get full upgrade &&
-sudo apt-get install -f &&sudo apt-get -f install &&sudo apt-get check ; sudo apt-get -f install ; sudo apt-get install -f ; 
-sudo apt-get update &&sudo apt-get upgrade ; sudo apt-get dist-upgrade ; sudo apt-get full-upgrade
+# sudo apt-get
 # reboot
 //ou# sudo reboot
 //instalando programas
